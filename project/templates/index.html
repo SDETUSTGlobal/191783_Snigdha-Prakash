@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/static/pexels-fauxels-3184418.jpg') grey;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: darken;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            filter: blur(3px);
+            min-height: 800px;
+
+            background-blend-mode: darken;
+            
+            z-index: -1;
+        }
+        
+        .body-content {
+            padding-top: 15vh;
+            filter: blur(0);
+        }
+        
+        .container {
+            width: 350px;
+            height: 440px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            border-radius: 15px;
+            background: rgba(138, 162, 164, 0.23);
+        }
+        
+        .logo {
+            margin-bottom: 0;
+            margin-top: 0px;
+            padding-top: 0;
+        }
+        
+        .logo img {
+            width: 100px;
+            margin: 0px;
+            border-radius: 50px;
+        }
+        
+        h2 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-item {
+            margin: 5px;
+            padding-bottom: 10px;
+            display: flex;
+        }
+        
+        .form-item label {
+            display: block;
+            padding: 2px;
+            font-size: 20px;
+            width: 100px;
+        }
+        .form-item #name {
+            width: 250px;
+            height: 25px;
+            border: 1px solid white;
+            background: #fcfafad4;
+            color: white;
+            align-items: center;
+            justify-content: center;
+
+            
+        }
+        .form-item #UID {
+            width: 250px;
+            height: 25px;
+            border: 1px solid white;
+            background: #fcfafad4;
+            color: white;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .form-item #cname{
+            width: 250px;
+            height: 25px;
+            border: 1px solid white;
+            background: #fcfafad4;
+            color: white;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .form-item #email {
+            width: 250px;
+            height: 25px;
+            border: 1px solid white;
+            background: #fffcfcd4;
+            color: #ffffff;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        
+        
+        .change{
+            background: white;
+            /* color: black; */
+        }
+        .login {
+            font-size: 18.5px;
+            width: 30px;
+            height: 27px;
+            border: 1px solid white;
+            margin: auto;
+            color: white;
+            background: #151414d4;
+            cursor: pointer;
+        }
+        .login:hover{
+            color: black;
+            background: #6d6dbf6d;
+        }
+        
+        .form-btns {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 10px 0;
+        }
+        
+        .form-btns button {
+            margin: auto;
+            font-size: 20px;
+            padding: 5px 15px;
+            border: 2px solid;
+            border-radius: 15px;
+            color: white;
+            background: #178cc6;
+            width: 280px;
+            cursor: pointer;
+        }
+        
+        .other-options {
+            margin: auto;
+            display: flex;
+        }
+        
+        .other-options p {
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 5px 45px;
+        }
+        
+        .other-options p:hover {
+            color: rgb(31, 31, 36);
+        }
+        
+        p {
+            text-align: center;
+            font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        
+        .other-option-tab-cover {
+            position: relative;
+            bottom: 25px;
+            left: 25px;
+            width: 300px;
+            background: rgba(138, 162, 164, 0.23);
+            border-radius: 15px;
+            display: none;
+        }
+        .show{
+            display: block;
+
+        }
+        
+        .other-option-tab {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgba(132, 131, 140, 0.316);
+        }
+        
+        .other-option-tab .fb {
+            background: #1d1dea2b;
+            border: #1d1dea2b;
+            border-radius: 25px;
+            font-size: 15px;
+            color: black;
+            padding: 5px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        
+        .other-option-tab .fb:hover {
+            color: white;
+        }
+        
+        .other-option-tab .gl {
+            background: #bd1f1f52;
+            border: #bd1f1f52;
+            border-radius: 25px;
+            font-size: 15px;
+            margin: 5px 0;
+            color: black;
+            padding: 5px;
+            cursor: pointer;
+        }
+        
+        .other-option-tab .gl:hover {
+            color: white;
+        }
+        
+        .other-option-tab .pr {
+            background: #0ca68980;
+            border: #0ca68980;
+            border-radius: 25px;
+            font-size: 15px;
+            color: black;
+            padding: 5px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        
+        .other-option-tab .pr:hover {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="background"></div>
+    <div class="body-content">
+        <div class="container">
+            <div class="logo">
+                <img src="/static/UST (3).jpg " alt="Company Logo" srcset="" />
+            </div>
+            <h2>User Login</h2>
+            <div class="login-form">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <div class="form-item">
+                        <!-- <label for="userName">Username:</label> -->
+                        <input style="color: black;" type="text" id="name" name="fullname" placeholder="Full name">
+
+                    </div>
+                    <div class="form-item">
+                        <!-- <label for="userName">Username:</label> -->
+                        <input style="color: black;" type="number" min="100000" max="999999" id="UID" name="uid" placeholder="Enter UID">
+                    </div>
+                    <div class="form-item">
+                        <!-- <label for="userName">Username:</label> -->
+                        <input style="color: black;" type="text" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-item">
+                        <!-- <label for="userName">Username:</label> -->
+                        <input style="color: black;" type="text" id="cname" name="compname" placeholder="Enter CompanyName ">
+                    </div>
+
+
+                        <!-- <label for="passWord">Password:</label> -->
+
+                        <input type="submit" >
+
+                        
+                        <br>
+
+
+                        <input type="reset"  >
+
+
+
+                </form>
+                <p>Copyright &copy; UST.com</p>
+            </div>
+        </div>
+        
+
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+from selenium import webdriver
+import time
+driver = webdriver.Chrome("D:\chromedriver_win32\chromedriver.exe")
+driver.maximize_window()
+driver.get("http://127.0.0.1:5000/")
+driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/form/div[1]/input").send_keys("Snigdha")
+time.sleep(2)
+driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/form/div[2]/input").send_keys("145623")
+time.sleep(2)
+driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/form/div[3]/input").send_keys("snigdha@gmail.com")
+time.sleep(2)
+driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/form/div[4]/input").send_keys("ABC")
+time.sleep(2)
+driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/form/input[1]").click()
+time.sleep(4)
+driver.close()
